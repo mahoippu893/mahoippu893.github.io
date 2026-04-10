@@ -26,17 +26,17 @@ export default function StreamSliderItem({
                 return null;
             }
 
-            return (<button className="max-w-sm"><YoutubeThumbnail url={content.url} title={content.title ?? ""} /></button>);
+            return (<button className="max-w-sm" onClick={() => onClick(content)}><YoutubeThumbnail url={content.url} title={content.title ?? ""} /></button>);
         case PLATFORM_NICONICO_PETIT_LOVE_STREAM:
         case PLATFORM_NICONICO_BIG_LOVE_STREAM:
         case PLATFORM_NICONICO_BIG_LOVE_MOVIE:
 
             if (content.openingStreamUrl != null && content.openingStreamUrl != "") {
-                return  (<button className="max-w-sm"><YoutubeThumbnail url={content.openingStreamUrl} title={content.title ?? ""} /></button>);
+                return  (<button className="max-w-sm" onClick={() => onClick(content)}><YoutubeThumbnail url={content.openingStreamUrl} title={content.title ?? ""} /></button>);
             }
 
             if (content.twitterUrl != null && content.twitterUrl != "") {
-                return  (<button className="max-w-sm"><TwitterWidget tweetUrl={content.twitterUrl} /></button>);
+                return  (<button className="max-w-sm" onClick={() => onClick(content)}><TwitterWidget tweetUrl={content.twitterUrl} /></button>);
             }
 
             return null;

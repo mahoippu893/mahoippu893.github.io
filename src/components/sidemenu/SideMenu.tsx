@@ -1,4 +1,3 @@
-import { theme } from "../../config/themeColors";
 import SideMenuLinkButtonASMR from "./SideMenuLinkButtonASMR";
 import SideMenuLinkButtonCalendar from "./SideMenuLinkButtonCalendar";
 import SideMenuLinkButtonSearch from "./SideMenuLinkButtonSearch";

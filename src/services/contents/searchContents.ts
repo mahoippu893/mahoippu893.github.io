@@ -25,7 +25,7 @@ export async function searchContents(
     // タイトル検索
     if (titles && titles.length > 0) {
         filtered = filtered.filter(c =>
-            titles.some(t => c.title.includes(t))
+            titles.some(t => c.title?.includes(t) ?? false)
         );
     }
 
@@ -45,10 +45,10 @@ export async function searchContents(
 
     // 日付範囲
     if (from) {
-        filtered = filtered.filter(c => c.startDate >= from);
+        filtered = filtered.filter(c => c.startDate != null && c.startDate >= from);
     }
     if (to) {
-        filtered = filtered.filter(c => c.startDate <= to);
+        filtered = filtered.filter(c => c.startDate != null && c.startDate <= to);
     }
 
     // ページング
